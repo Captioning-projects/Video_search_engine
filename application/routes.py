@@ -20,7 +20,7 @@ def receive_json():
     json_data = request.get_json()
     video_id = json_data['video_id']
     video_caption = json_data['video_caption']
-    with open('specific_text_file.txt', 'a') as f:
+    with open('/home/projects/Video_search_engine/output/vid_results.csv', 'a') as f:
         f.write(f'{video_id}, {video_caption}\n')
     return 'JSON sent and processed successfully'
 
