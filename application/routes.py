@@ -1,7 +1,7 @@
 import os
 from flask import render_template, redirect, flash, request
 from application import app
-import pandas 
+import pandas as pd
 from application.output import run_query
 
 
