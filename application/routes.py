@@ -16,7 +16,7 @@ def home():
 
     return render_template('home.html')
 
-@app.route('/receive_json', methods=['POST'])
+@app.route('/receive_json/', methods=['POST'])
 # @cross_origin()
 def receive_json():
     json_data = request.get_json()
