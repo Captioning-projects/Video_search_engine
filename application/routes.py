@@ -3,7 +3,9 @@ from flask import render_template, redirect, flash, request
 from application import app
 import pandas as pd
 from application.output import run_query
-# from flask_cors import CORS, cross_origin
+from flask_cors import CORS, cross_origin
+
+CORS(app)
 
 @app.route('/', methods=['GET', 'POST'])
 # @cross_origin()
