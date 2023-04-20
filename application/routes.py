@@ -5,7 +5,7 @@ import pandas as pd
 from application.output import run_query
 from flask_cors import CORS, cross_origin
 
-CORS(app)
+CORS(app,supports_credentials=True)
 
 @app.route('/', methods=['GET', 'POST'])
 # @cross_origin()
