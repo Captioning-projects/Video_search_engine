@@ -15,7 +15,7 @@ def home():
 
     return render_template('home.html')
 
-@app.route('/receive_json, methods=['POST'])
+@app.route('/receive_json', methods=['POST'])
 def receive_json():
     json_data = request.get_json()
     video_id = json_data['video_id']
