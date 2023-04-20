@@ -28,7 +28,7 @@ def receive_json():
     df = pd.read_csv(csv_loc)
     index_ = df.tail(1).index[0]+1
     df.loc[index_] = [index_,video_caption, video_id]
-    df.to_csv(csv_loc)
+    df.to_csv(csv_loc,index=False)
     return 'JSON sent and processed successfully'
 
 
