@@ -3,10 +3,10 @@ from flask import render_template, redirect, flash, request
 from application import app
 import pandas as pd
 from application.output import run_query
-from flask_cors import CORS, cross_origin
+# from flask_cors import CORS, cross_origin
 
 @app.route('/', methods=['GET', 'POST'])
-@cross_origin()
+# @cross_origin()
 def home():
     if request.method == 'POST':
         text = request.form['query'].lower()
@@ -17,7 +17,7 @@ def home():
     return render_template('home.html')
 
 @app.route('/receive_json', methods=['POST'])
-@cross_origin()
+# @cross_origin()
 def receive_json():
     json_data = request.get_json()
     video_id = json_data['video_id']
