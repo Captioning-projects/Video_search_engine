@@ -8,7 +8,7 @@ cors = CORS(app, resources={r"/receive_json/": {"origins": "*",
                                         }},
             headers=["Content-Type", "Authorization"])
 
-cors = CORS(app)
-app.config['CORS_HEADERS'] = 'Content-Type'
+# cors = CORS(app)
+# app.config['CORS_HEADERS'] = 'Content-Type'
 
 from application import routes
