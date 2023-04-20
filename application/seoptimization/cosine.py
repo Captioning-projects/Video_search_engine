@@ -62,8 +62,7 @@ def Doct2vect(documents):
 #     model = SentenceTransformer('sentence-transformers/stsb-roberta-large')
 #     embeddings = model.encode(documents_df.documents_cleaned)
 #     # print(embeddings)
- 
-        
+       
 #     pairwise_similarities= np.array(cosine_similarity(embeddings)[0])
 #     normalizedData = (pairwise_similarities-np.min(pairwise_similarities))/(np.max(pairwise_similarities)-np.min(pairwise_similarities))
 #     # print(normalizedData)

@@ -27,11 +27,11 @@ def run_query(text):
     print(corpus)
     # capturing similarties between seq_text with reference_string
     # result['cosine_values'] = Doct2vect(corpus)[1:]  
-    result['cosine_values'] = Semantic_sim(corpus)[1:]  
+    result['cosine_values'] = Semantic_sim(corpus)[1:]
     result['cosine_values']= result['cosine_values'].apply(lambda x: '%.2f' % float(x*100))
-    
     result = result.values.tolist()
-    result.sort(key=lambda x: float(x[2]) , reverse = True)
+    # print(result)
+    result.sort(key=lambda x: float(x[3]) , reverse = True)
     
 
     return result
