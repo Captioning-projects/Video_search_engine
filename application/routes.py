@@ -32,7 +32,7 @@ def receive_json():
     return 'JSON sent and processed successfully'
 
 
-@app.route('/uploadvideo', methods=['POST'])
+@app.route('/uploadvideo/', methods=['POST'])
 def upload_video():
     print('hi')
     if 'video_file' not in request.files:
