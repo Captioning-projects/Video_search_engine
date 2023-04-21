@@ -40,6 +40,7 @@ def upload_video():
         print('No file uploaded')
         return 'No file uploaded', 400
     video_file = request.files['video_file']
+    csv_loc = '/home/projects/Video_search_engine/output/vid_results.csv'
     df = pd.read_csv(csv_loc)
     index_ = df.tail(1).index[0]+1
     video_file.save('application/static/test/'+str(index_)+'.mp4')
