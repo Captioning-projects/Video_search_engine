@@ -22,11 +22,12 @@ def home():
 # @cross_origin()
 def receive_json():
     json_data = request.get_json()
-    video_id = json_data['video_id']
+    
     video_caption = json_data['video_caption']
     csv_loc = '/home/projects/Video_search_engine/output/vid_results.csv'
     df = pd.read_csv(csv_loc)
     index_ = df.tail(1).index[0]+1
+    video_id = str(index_)+'.mp4'
     df.loc[index_] = [index_,video_caption, video_id]
     df.to_csv(csv_loc,index=False)
     return 'JSON sent and processed successfully'
@@ -39,6 +40,8 @@ def upload_video():
         print('No file uploaded')
         return 'No file uploaded', 400
     video_file = request.files['video_file']
-    video_file.save('uploaded_video.mp4')
+    df = pd.read_csv(csv_loc)
+    index_ = df.tail(1).index[0]+1
+    video_file.save('application/static/test/+'str(index_)+'.mp4')
     return 'Video file uploaded successfully'
 
