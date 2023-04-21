@@ -42,6 +42,6 @@ def upload_video():
     video_file = request.files['video_file']
     df = pd.read_csv(csv_loc)
     index_ = df.tail(1).index[0]+1
-    video_file.save('application/static/test/+'str(index_)+'.mp4')
+    video_file.save('application/static/test/'+str(index_)+'.mp4')
     return 'Video file uploaded successfully'
 
