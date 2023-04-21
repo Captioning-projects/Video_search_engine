@@ -36,6 +36,7 @@ def receive_json():
 def upload_video():
     print('hi')
     if 'video_file' not in request.files:
+        print('No file uploaded')
         return 'No file uploaded', 400
     video_file = request.files['video_file']
     video_file.save('uploaded_video.mp4')
